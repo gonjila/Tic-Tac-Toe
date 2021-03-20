@@ -4,7 +4,7 @@ import './styles/Root.scss';
 
 const App = () => {
     return(
-        <div>
+        <div className="app">
             <h1>Welcome to Tic Tac Toe game!</h1>
             <Board />
         </div>

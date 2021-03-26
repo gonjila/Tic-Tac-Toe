@@ -1,16 +1,14 @@
-import React, {useState} from "react";
+import React, { useState } from 'react';
 import Board from './components/Board';
-import { calculateWinner } from "./helpers";
+import History from './components/History';
+import { calculateWinner } from './helpers';
 import './styles/Root.scss';
 
 const App = () => {
-    const [history, setHistory] = useState([ {board: Array(9).fill(null), isXNext: true} ]);
+    const [history, setHistory] = useState([ {board: Array(9).fill(null), isXNext: true}, ]);
     const [currentMove, setCurrentMove] = useState(0);
-
     const current = history[currentMove];
-
-    console.log(history)
-
+    
     const winner = calculateWinner(current.board);
     const message = winner ? `winner is ${winner}` : `next player is ${current.isXNext ? 'X' : 'O'}`;
 
@@ -34,15 +32,19 @@ const App = () => {
         setCurrentMove(prev => prev + 1)
     };
 
+    const moveTo = (move) => {
+        setCurrentMove(move);
+    };
+
     return(
         <div className="app">
             <h1>Welcome to Tic Tac Toe game!</h1>
             <h2> {message} </h2>
             <Board board={current.board} handleSquareClick={handleSquareClick} />
+            <History history={history} moveTo={moveTo} currentMove={currentMove} />
         </div>
     )
     
 }
 
 export default App;
-

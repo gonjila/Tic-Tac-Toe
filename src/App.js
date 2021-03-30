@@ -5,7 +5,7 @@ import { calculateWinner } from './helpers';
 import './styles/Root.scss';
 
 const App = () => {
-    const [history, setHistory] = useState([ {board: Array(9).fill(null), isXNext: true}, ]);
+    const [history, setHistory] = useState([{board: Array(9).fill(null), isXNext: true} ]);
     const [currentMove, setCurrentMove] = useState(0);
     const current = history[currentMove];
     

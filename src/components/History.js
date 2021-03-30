@@ -6,7 +6,7 @@ const History = ({ history, moveTo, currentMove }) => {
             {history.map((_, move) => {
                 return(
                     <li key={move} >
-                        <button type="button" style={{fontWeight: move==currentMove?"bold":"normal",}} onClick={() => moveTo()} >
+                        <button type="button" style={{fontWeight: move==currentMove?"bold":"normal",}} onClick={() => moveTo(move)} >
                             { move == 0 ? `go to game start` : `go to move #${move}` }
                         </button>
                     </li>
@@ -16,4 +16,4 @@ const History = ({ history, moveTo, currentMove }) => {
     );
 };
 
-export default History
+export default History;

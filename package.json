@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "predeploy": "rm -rf dist && parcel build index.html --public-url '.'",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "lint": "eslint src/**/*.js",

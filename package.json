@@ -4,7 +4,7 @@
   "homepage": "https://gonjila.github.io/Tic-Tac-Toe",
   "description": "",
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "rm -rf dist && parcel build index.html --public-url '.'",
     "deploy": "gh-pages -b master -d build",
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -15,7 +15,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "gh-pages": "^3.1.0",
     "node-sass": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
@@ -31,6 +30,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
+    "gh-pages": "^3.1.0",
     "parcel": "^2.0.0-beta.2",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2"
